@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../css/App.css';
 import firebase from '../firebase';
+import SignIn from './SignIn';
+import SignOut from './SignOut';
+import Navigation from './Navigation';
 
 export default class App extends Component {
   constructor() {
@@ -23,12 +25,13 @@ export default class App extends Component {
       const {user} = this.state;
       if (user) {
         return (
-          <section className="Application logged-in">
-            <UserInfo user={user}/>
-            <GoalRoom/>
+          <section>
+          <Navigation />
+          <SignOut />
           </section>
         );
       }
+
       return (
         <section className="Application not-logged-in">
           <SignIn/>
@@ -36,5 +39,3 @@ export default class App extends Component {
       );
     }
   }
-
-module.exports = App;

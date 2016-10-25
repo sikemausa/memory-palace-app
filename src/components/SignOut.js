@@ -4,12 +4,8 @@ import firebase, {provider} from '../firebase';
 export default function ({user}) {
 
   return (
-    <section className="UserInformation">
-      <article className="UserBio">
-      </article>
       <button className="SignOut" onClick={() => firebase.auth().signOut()}>
-        Give Up
+        Sign Out
       </button>
-    </section>
   )
 }
