@@ -1,5 +1,4 @@
-export const firebase = require('firebase');
-
+const firebase = require('firebase');
   var config = {
     apiKey: "AIzaSyDLMJIq-7KzETD3wLHAKLc7vbr_NyCTDZE",
     authDomain: "memory-palace-ba577.firebaseapp.com",
@@ -10,4 +9,5 @@ export const firebase = require('firebase');
 
   firebase.initializeApp(config);
 
+export default firebase;
 export const provider = new firebase.auth.FacebookAuthProvider();

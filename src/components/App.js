@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '../css/App.css';
 import firebase from '../firebase';
+import SignIn from './SignIn';
+import UserInfo from './UserInfo';
 
 export default class App extends Component {
   constructor() {
@@ -25,10 +26,10 @@ export default class App extends Component {
         return (
           <section className="Application logged-in">
             <UserInfo user={user}/>
-            <GoalRoom/>
           </section>
         );
       }
+
       return (
         <section className="Application not-logged-in">
           <SignIn/>
