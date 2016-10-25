@@ -7,7 +7,6 @@ export default class SignIn extends Component {
     return (
       <section className="SignIn">
         <h1 className="SignIn-title">Memory Palace</h1>
-        <article className="Gains-Logo"></article>
         <button
           className="SignInButton"
           onClick={() => firebase.auth().signInWithPopup(provider)}>
