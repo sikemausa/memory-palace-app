@@ -12,6 +12,8 @@ const Root = () => {
      <div>
         <Match exactly pattern="/" component={App} />
         <Match exactly pattern="/menu" component={Menu} />
+        {/* <Match exactly pattern="/create-palace" component={CreatePalace} /> */}
+        {/* <Match exactly pattern="/palace/:id" component={Palace} /> */}
      </div>
     </BrowserRouter>
   )

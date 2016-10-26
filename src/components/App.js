@@ -4,6 +4,7 @@ import firebase from '../firebase';
 import SignIn from './SignIn';
 import SignOut from './SignOut';
 import Navigation from './Navigation';
+import Menu from './Menu';
 
 export default class App extends Component {
   constructor() {
@@ -12,6 +13,12 @@ export default class App extends Component {
         user: null
       };
     }
+
+    get reference() {
+ 
+      return firebase
+        .database();
+}
 
     componentDidMount() {
       firebase
@@ -27,7 +34,9 @@ export default class App extends Component {
         return (
           <section>
           <Navigation />
+            <h1>Logged in as {this.state.user.displayName}</h1>
           <SignOut />
+          <Menu reference={this.reference}/>
           </section>
         );
       }
