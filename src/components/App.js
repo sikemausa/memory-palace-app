@@ -6,6 +6,7 @@ import SignOut from './SignOut';
 import Navigation from './Navigation';
 import Menu from './Menu';
 import AddText from '../containers/AddText';
+import AddItemForm from './AddItemForm';
 
 export default class App extends Component {
   constructor() {
@@ -37,7 +38,7 @@ export default class App extends Component {
           <Navigation />
             <h1>Logged in as {this.state.user.displayName}</h1>
           <SignOut />
-          <AddText />
+          <AddItemForm />
           </section>
         );
       }
