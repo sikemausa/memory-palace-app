@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import addItem from './addItem';
+import items from './items';
+import testText from './testText';
 
 const reducers = combineReducers({
-  addItem
+  items,
+  testText
 });
 
 export default reducers;

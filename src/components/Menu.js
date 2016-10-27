@@ -21,7 +21,6 @@ export default class Menu extends Component {
   }
 
   render(){
-    console.log(this.props.reference);
     return(
       <div id="create-new-palace">
         <div id="add-image"><span id="+">+</span> Add Image</div>
