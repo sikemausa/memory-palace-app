@@ -15,7 +15,7 @@ export default class App extends Component {
     }
 
     get reference() {
- 
+
       return firebase
         .database();
 }
@@ -36,7 +36,6 @@ export default class App extends Component {
           <Navigation />
             <h1>Logged in as {this.state.user.displayName}</h1>
           <SignOut />
-          <Menu reference={this.reference}/>
           </section>
         );
       }
