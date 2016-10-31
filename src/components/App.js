@@ -7,6 +7,7 @@ import Navigation from './Navigation';
 import Menu from './Menu';
 import AddText from '../containers/AddText';
 import AddItemForm from './AddItemForm';
+import AddItem from '../containers/AddItem';
 
 export default class App extends Component {
   constructor() {
@@ -38,7 +39,7 @@ export default class App extends Component {
           <Navigation />
             <h1>Logged in as {this.state.user.displayName}</h1>
           <SignOut />
-          <AddItemForm />
+          <AddItem />
           </section>
         );
       }

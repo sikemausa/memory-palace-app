@@ -21,10 +21,9 @@ let AddItemForm = ({ onSubmit }) => {
         <input ref={ node => { questionInput = node }} />
         Answer:
         <input ref={ node => { answerInput = node }} />
+        Mneumonic Device:
         <input ref={ node => { deviceInput = node }} />
-        {/* wtf is happening here? What's is ref arbitrary, what's the node function do? ⬆ */}
         {console.log}
-        {/* I'm assuming this doesn't do anything, correct? ⬆ */}
         <button>Add Item</button>
       </form>
     </section>

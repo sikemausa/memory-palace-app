@@ -18,4 +18,4 @@ let test = ({ onSubmit }) => {
   )
 }
 
-export default test
+export default test;
