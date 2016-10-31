@@ -1,4 +1,4 @@
-import firebase, { provider } from './firebase';
+import firebase, { provider } from '../firebase';
 
 export const addItem = (id, picture, question, answer, device) => {
   return {
