@@ -4,16 +4,17 @@ import './css/index.css';
 import App from './components/App';
 import Menu from './components/Menu';
 import { BrowserRouter, Match } from 'react-router';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import reducers from './reducers/reducers.js';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import initialState from './initialState';
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   reducers,
   initialState,
-  applyMiddleware(thunk)
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 const Root = () => {

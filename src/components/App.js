@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import firebase from '../firebase';
 import SignIn from './SignIn';
-import SignOut from './SignOut';
 import Navigation from './Navigation';
 import Menu from './Menu';
-import AddText from '../containers/AddText';
-import AddItemForm from './AddItemForm';
-import AddItem from '../containers/AddItem';
 
 export default class App extends Component {
   constructor() {
@@ -36,7 +32,6 @@ export default class App extends Component {
           <section>
             <Navigation />
             <SignIn />
-            <AddItem />
           </section>
         );
       }
