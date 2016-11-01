@@ -11,7 +11,7 @@ export default function itemsReducer(state = initialState.items, action) {
       return {
         data: [
           ...state.data || [],
-          action.items
+          action.item
         ],
       };
 
