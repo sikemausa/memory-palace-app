@@ -32,22 +32,12 @@ export default class App extends Component {
     }
 
     render() {
-      const {user} = this.state;
-      if (user) {
         return (
           <section>
-          <Navigation />
-            <h1>Logged in as {this.state.user.displayName}</h1>
-          <SignOut />
-          <AddItem />
+            <Navigation />
+            <SignIn />
+            <AddItem />
           </section>
         );
       }
-
-      return (
-        <section className="Application not-logged-in">
-          <SignIn/>
-        </section>
-      );
     }
-  }
