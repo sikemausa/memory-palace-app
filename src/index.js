@@ -9,6 +9,8 @@ import reducers from './reducers/reducers.js';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import initialState from './initialState';
+import * as actions from './actions/auth';
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -31,3 +33,5 @@ const Root = () => {
 }
 
 ReactDOM.render(<Root />, document.getElementById('root'));
+
+store.dispatch(actions.startListeningToAuth());

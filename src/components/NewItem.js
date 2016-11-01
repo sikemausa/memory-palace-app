@@ -10,11 +10,11 @@ export class NewItem extends React.Component {
     const { auth, submitNewItem } = this.props;
 
     return (
-      <div id="new-expense">
-        <h2>Submit New Expense:</h2>
-        <label for="title">Title:</label>
+      <div id="new-item">
+        <h2>Submit New Item:</h2>
+        <label>Title:</label>
         <input id="title" type="text" name="title" placeholder="Item Name" />
-        <label for="cost">Total Cost:</label>
+        <label>Total Cost:</label>
         <input id="cost" type="text" name="cost" placeholder="e.g. $10.00" />
 
         <button
@@ -25,7 +25,7 @@ export class NewItem extends React.Component {
               cost: $('#cost').val(),
             })
           }
-        >Submit Expense</button>
+        >Submit Item</button>
     </div>);
   }
 };

@@ -23,7 +23,7 @@ export class ItemsList extends React.Component {
         <ul>
           { (items.data).map(item => {
               return (
-                <li>
+                <li key={Date.now()}>
                   <p><strong>Title: </strong>{item.title}</p>
                   <p><strong>Uploaded By: </strong>{item.user}</p>
                   <p><strong>Cost: </strong> {item.cost}</p>

@@ -1,6 +1,6 @@
 import { initialState } from '../initialState';
 
-export default function expensesReducer(state = initialState.items, action) {
+export default function itemsReducer(state = initialState.items, action) {
   switch(action.type) {
     case 'RECEIVE_ALL_ITEMS':
       return {
@@ -17,5 +17,5 @@ export default function expensesReducer(state = initialState.items, action) {
 
     default:
       return state;
-  };
-};
+  }
+}
