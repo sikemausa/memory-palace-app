@@ -18,12 +18,12 @@ export class ItemsList extends React.Component {
   render() {
     const { items, submitNewItem } = this.props;
     return (
-      <div id="items">
+      <div id="itemsDiv">
         <h2>Items:</h2>
         <ul>
-          { (items.data).map(item => {
+          { (items.data).map((item, index) => {
               return (
-                <li key={Date.now()}>
+                <li key={index}>
                   <p><strong>Title: </strong>{item.title}</p>
                   <p><strong>Uploaded By: </strong>{item.user}</p>
                   <p><strong>Cost: </strong> {item.cost}</p>
