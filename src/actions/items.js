@@ -1,40 +1,14 @@
 import firebase from 'firebase';
 const splitObject = require('split-object');
+import { currentUser } from './auth';
 
-// let currentUser = firebase.auth().currentUser;
-const firebaseItems = firebase.database().ref(`/items`);
-
-// function fetchAllItems() {
-//   return (dispatch, getState) => {
-//     let fetchedItems = [];
-//     let items;
-//     firebaseItems.on('value', (snapshot) => {
-//         let data = snapshot.val();
-//         items = splitObject(data).map(item => Object.assign({
-//           key: item.key
-//         }, item.value));
-//         console.log(data);
-//       });
-//       console.log(items);
-//
-//
-//     firebaseItems.once('value').then(result => {
-//       result.forEach(item => {
-//         fetchedItems.push(item.val());
-//       });
-//     });
-//
-//       dispatch({
-//         type: 'RECEIVE_ALL_ITEMS',
-//         items: items
-//       });
-//   };
-// }
+let firebaseItems;
 
 function fetchAllItems() {
   return (dispatch, getState) => {
     let fetchedItems = [];
-
+    firebaseItems = firebase.database().ref(`/${currentUser}/items`);
+    console.log(currentUser);
     firebaseItems.once('value').then(result => {
       result.forEach(item => {
         fetchedItems.push(item.val());

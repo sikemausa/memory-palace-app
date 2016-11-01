@@ -11,3 +11,4 @@ const firebase = require('firebase');
 
 export default firebase;
 export const provider = new firebase.auth.FacebookAuthProvider();
+export const currentUser = firebase.auth().currentUser;
