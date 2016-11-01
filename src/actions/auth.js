@@ -1,27 +1,12 @@
 import firebase, { provider } from '../firebase';
 
-export const addItem = (id, picture, question, answer, device) => {
-  return {
-    type: "ADD_ITEM",
-    id,
-    picture,
-    question,
-    answer,
-    device
-  };
-};
-
-export const addText = (text) => {
-  return {
-    type: "ADD_TEXT",
-    text
-  };
-};
+let currentUser;
 
 function startListeningToAuth() {
   return (dispatch, getState) => {
     firebase.auth().onAuthStateChanged(authData => {
       if (authData) {
+        currentUser = authData.uid;
         dispatch({
           type: 'LOGIN',
           uid: authData.uid,
@@ -58,6 +43,7 @@ function logIn() {
   };
 }
 
+
 function logOut() {
   return (dispatch,) => {
     dispatch({
@@ -78,4 +64,5 @@ export {
   startListeningToAuth,
   logIn,
   logOut,
+  currentUser
 };

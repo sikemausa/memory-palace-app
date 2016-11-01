@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import firebase, { provider } from '../firebase';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../actions/auth';
 
 export class SignIn extends Component {
 

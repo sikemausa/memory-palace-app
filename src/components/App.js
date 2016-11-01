@@ -2,12 +2,10 @@ import React, { Component } from 'react';
 import '../css/App.css';
 import firebase from '../firebase';
 import SignIn from './SignIn';
-import SignOut from './SignOut';
 import Navigation from './Navigation';
 import Menu from './Menu';
-import AddText from '../containers/AddText';
-import AddItemForm from './AddItemForm';
-import AddItem from '../containers/AddItem';
+import ItemsList from './ItemsList';
+import NewItem from './NewItem';
 
 export default class App extends Component {
   constructor() {
@@ -34,9 +32,10 @@ export default class App extends Component {
     render() {
         return (
           <section>
-            <Navigation />
             <SignIn />
-            <AddItem />
+            <Navigation />
+            <NewItem />
+            <ItemsList />
           </section>
         );
       }

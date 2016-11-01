@@ -1,35 +1,21 @@
-const items = (state = [], action) => {
+import { initialState } from '../initialState';
 
+export default function itemsReducer(state = initialState.items, action) {
   switch(action.type) {
-    case 'ADD_ITEM':
-      return [...state, {
-        id: Date.now(),
-        picture: action.picture,
-        question: action.question,
-        answer: action.answer,
-        device: action.device }];
+    case 'RECEIVE_ALL_ITEMS':
+      return {
+        data: action.items
+      };
+
+    case 'RECEIVE_NEW_ITEM':
+      return {
+        data: [
+          ...state.data || [],
+          action.item
+        ],
+      };
 
     default:
       return state;
   }
-};
-
-export default items;
-
-// let currentUser = firebase.auth().currentUser.uid;
-// let databaseReference = firebase.database().ref(`${currentUser}/Palaces/Palace1`);
-//
-// Where are we supposed to define the above? ⬆
-//
-// case 'ADD_ITEM':
-//
-//   databaseReference.concat(
-//     [...state, {
-//     id: Date.now(),
-//     picture: action.picture,
-//     question: action.question,
-//     answer: action.answer,
-//     device: action.device }];
-//   )
-//
-//   return state;
+}
