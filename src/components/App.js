@@ -4,6 +4,8 @@ import firebase from '../firebase';
 import SignIn from './SignIn';
 import Navigation from './Navigation';
 import Menu from './Menu';
+import ItemsList from './ItemsList';
+import NewItem from './NewItem';
 
 export default class App extends Component {
   constructor() {
@@ -30,8 +32,10 @@ export default class App extends Component {
     render() {
         return (
           <section>
-            <Navigation />
             <SignIn />
+            <Navigation />
+            <NewItem />
+            <ItemsList />
           </section>
         );
       }

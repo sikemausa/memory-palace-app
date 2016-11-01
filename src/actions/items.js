@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 
-const firebaseImages = firebase.storage().ref('images');
-const firebaseItems = firebase.database().ref('items');
+let currentUser = firebase.auth().uid;
+const firebaseItems = firebase.database().ref(`${currentUser}/items`);
 
 function fetchAllItems() {
   return (dispatch, getState) => {
@@ -17,13 +17,11 @@ function fetchAllItems() {
         items: fetchedItems
       });
     });
-  }
+  };
 }
 
 function submitNewItem(itemData) {
   return (dispatch) => {
-
-    // create a new unique key to store our expense data under
     let newItemKey = firebaseItems.push().key;
 
       firebaseItems.child(newItemKey).set(itemData)
