@@ -1,18 +1,40 @@
 import React, { Component } from 'react';
 import firebase, { provider } from '../firebase';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
-export default class SignIn extends Component {
+export class SignIn extends Component {
 
   render() {
-    return (
-      <section className="SignIn">
-        <h1 className="SignIn-title">Memory Palace</h1>
-        <button
+    const { status, username, logIn, logOut } = this.props;
+    if(status === 'LOGGED_IN') {
+      return (
+        <div id="auth-panel">
+          <p>Logged in as <strong>{username}</strong></p>
+          <button onClick={e => logOut()}>Log Out</button>
+        </div>
+      );
+    }
+    else {
+      return (
+        <section className="auth-panel">
+          <button
           className="SignInButton"
-          onClick={() => firebase.auth().signInWithPopup(provider)}>
+          disabled={(status === 'AWAITING_AUTH_RESPONSE')}
+          onClick={e => logIn()}>
           Sign In
-        </button>
-      </section>
-    );
+          </button>
+        </section>
+      );
+    }
   }
 }
+
+const mapStateToProps = (state) => state.auth;
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(actions, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
