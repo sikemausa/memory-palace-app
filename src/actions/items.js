@@ -7,12 +7,12 @@ let firebaseItems;
 function fetchAllItems() {
   return (dispatch, getState) => {
     let fetchedItems = [];
-    firebaseItems = firebase.database().ref(`/${username}/${userUid}/items`);
+    firebaseItems = firebase.database().ref(`/${userUid}/${username}/items`);
     firebaseItems.once('value').then(result => {
       result.forEach(item => {
         fetchedItems.push(item.val());
       });
-
+      
       dispatch({
         type: 'RECEIVE_ALL_ITEMS',
         items: fetchedItems

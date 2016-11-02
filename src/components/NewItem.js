@@ -12,17 +12,23 @@ export class NewItem extends React.Component {
     return (
       <div id="new-item">
         <h2>Submit New Item:</h2>
-        <label>Title:</label>
-        <input id="title" type="text" name="title" placeholder="Item Name" />
-        <label>Total Cost:</label>
-        <input id="cost" type="text" name="cost" placeholder="e.g. $10.00" />
+        <label>Question:</label>
+        <input id="question" type="text" name="question" placeholder="Question" />
+        <label>Answer:</label>
+        <input id="answer" type="text" name="answer" placeholder="Answer" />
+        <label>Mneumonic Device:</label>
+        <input id="mneumonic" type="text" name="mneumonic" placeholder="Mneumonic Device" />
+        <label>Image URL:</label>
+        <input id="imageURL" type="text" name="imageURL" />
 
         <button
           disabled={(auth.status !== 'LOGGED_IN')}
           onClick={e => submitNewItem({
               user: auth.username,
-              title: $('#title').val(),
-              cost: $('#cost').val(),
+              question: $('#question').val(),
+              answer: $('#answer').val(),
+              mneumonic: $('#mneumonic').val(),
+              imageURL: $('#imageURL').val()
             })
           }
         >Submit Item</button>
