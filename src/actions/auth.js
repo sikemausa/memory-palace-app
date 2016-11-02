@@ -1,12 +1,14 @@
 import firebase, { provider } from '../firebase';
 
-let currentUser;
+let userUid;
+let username;
 
 function startListeningToAuth() {
   return (dispatch, getState) => {
     firebase.auth().onAuthStateChanged(authData => {
       if (authData) {
-        currentUser = authData.uid;
+        username = authData.displayName;
+        userUid = authData.uid;
         dispatch({
           type: 'LOGIN',
           uid: authData.uid,
@@ -64,5 +66,6 @@ export {
   startListeningToAuth,
   logIn,
   logOut,
-  currentUser
+  userUid,
+  username
 };
