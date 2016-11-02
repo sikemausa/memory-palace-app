@@ -16,7 +16,7 @@ export class ItemsList extends React.Component {
   }
 
   render() {
-    const { items, submitNewItem } = this.props;
+    const { items } = this.props;
     return (
       <div id="itemsDiv">
         <h2>Items:</h2>
@@ -27,7 +27,7 @@ export class ItemsList extends React.Component {
                   <p><strong>Question: </strong>{item.question}</p>
                   <p><strong>Answer: </strong>{item.answer}</p>
                   <p><strong>Mneumonic Device: </strong> {item.mneumonic}</p>
-                  <img src={item.imageURL} />
+                  <img role="presentation" src={item.imageURL} />
                 </li>
               );
             })

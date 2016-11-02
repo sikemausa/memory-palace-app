@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-const splitObject = require('split-object');
 import { userUid, username } from './auth';
 
 let firebaseItems;
@@ -12,7 +11,7 @@ function fetchAllItems() {
       result.forEach(item => {
         fetchedItems.push(item.val());
       });
-      
+
       dispatch({
         type: 'RECEIVE_ALL_ITEMS',
         items: fetchedItems
