@@ -24,9 +24,10 @@ export class ItemsList extends React.Component {
           { (items.data).map((item, index) => {
               return (
                 <li key={index}>
-                  <p><strong>Title: </strong>{item.title}</p>
-                  <p><strong>Uploaded By: </strong>{item.user}</p>
-                  <p><strong>Cost: </strong> {item.cost}</p>
+                  <p><strong>Question: </strong>{item.question}</p>
+                  <p><strong>Answer: </strong>{item.answer}</p>
+                  <p><strong>Mneumonic Device: </strong> {item.mneumonic}</p>
+                  <img src={item.imageURL} />
                 </li>
               );
             })
