@@ -20,6 +20,23 @@ function fetchAllItems() {
   };
 }
 
+function deleteItem(itemData) {
+  return (dispatch) => {
+    let newItemKey = firebaseItems.push().key;
+
+      firebaseItems.child(newItemKey).set(itemData)
+      .then(() => {
+        dispatch({
+          type: 'RECEIVE_NEW_ITEM',
+          item: itemData
+        });
+      })
+      .catch(error => {
+        console.log("Error saving item: ", error);
+      });
+  };
+}
+
 function submitNewItem(itemData) {
   return (dispatch) => {
     let newItemKey = firebaseItems.push().key;

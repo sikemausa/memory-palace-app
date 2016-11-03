@@ -28,6 +28,7 @@ export class ItemsList extends React.Component {
                   <p><strong>Answer: </strong>{item.answer}</p>
                   <p><strong>Mneumonic Device: </strong> {item.mneumonic}</p>
                   <img role="presentation" src={item.imageURL} />
+                  <button id="deleteButton">Delete</button>
                 </li>
               );
             })

@@ -3,3 +3,26 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+#auth-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  align-items: center;
+  background-color: 
+}
+
+#logged-in-as {
+  width: 30%;
+}
+
+#log-out {
+  width: 30%;
+  text-align: right;
+}
+
+#log-out-button {
+  width: 50%;
+  height: 40px;
+}

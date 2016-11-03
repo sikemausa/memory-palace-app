@@ -25,7 +25,7 @@ const Root = () => {
       <BrowserRouter>
        <div>
           <Match exactly pattern="/" component={App} />
-          <Match exactly pattern="/menu" component={Menu} />
+          {/* <Match exactly pattern="/menu" component={Menu} /> */}
        </div>
       </BrowserRouter>
     </Provider>
