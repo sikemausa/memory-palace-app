@@ -12,16 +12,13 @@ export class NewItem extends React.Component {
     return (
       <div id="new-item">
         <h2>Submit New Item:</h2>
-        <label>Question:</label>
         <input id="question" type="text" name="question" placeholder="Question" />
-        <label>Answer:</label>
         <input id="answer" type="text" name="answer" placeholder="Answer" />
-        <label>Mneumonic Device:</label>
         <input id="mneumonic" type="text" name="mneumonic" placeholder="Mneumonic Device" />
-        <label>Image URL:</label>
-        <input id="imageURL" type="text" name="imageURL" />
+        <input id="imageURL" type="text" name="imageURL" placeholder="Image URL" />
 
         <button
+          id="submit-button"
           disabled={(auth.status !== 'LOGGED_IN')}
           onClick={e => submitNewItem({
               user: auth.username,

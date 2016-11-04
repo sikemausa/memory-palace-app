@@ -18,17 +18,17 @@ export class ItemsList extends React.Component {
   render() {
     const { items } = this.props;
     return (
-      <div id="itemsDiv">
+      <div id="items-div">
         <h2>Items:</h2>
         <ul>
           { (items.data).map((item, index) => {
               return (
-                <li key={index}>
+                <li id="item" key={index}>
                   <p><strong>Question: </strong>{item.question}</p>
                   <p><strong>Answer: </strong>{item.answer}</p>
                   <p><strong>Mneumonic Device: </strong> {item.mneumonic}</p>
                   <img role="presentation" src={item.imageURL} />
-                  <button id="deleteButton">Delete</button>
+                  <button id="delete-button">Delete</button>
                 </li>
               );
             })

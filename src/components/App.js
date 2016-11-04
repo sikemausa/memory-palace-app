@@ -31,11 +31,13 @@ export default class App extends Component {
 
     render() {
         return (
-          <section>
+          <section id="app">
               <SignIn />
             {/* <Navigation /> */}
-            <NewItem />
-            <ItemsList />
+            <div id="main-page">
+              <NewItem />
+              <ItemsList />
+            </div>
           </section>
         );
       }

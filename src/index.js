@@ -11,7 +11,6 @@ import thunk from 'redux-thunk';
 import initialState from './initialState';
 import * as actions from './actions/auth';
 
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   reducers,
