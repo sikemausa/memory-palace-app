@@ -1,5 +1,147 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  display        : flex;
+  margin         : 0;
+  padding        : 0;
+  font-family    : sans-serif;
+  flex-direction : column;
+}
+
+html {
+  box-sizing : border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing : inherit;
+}
+
+ul {
+  list-style-type : none;
+}
+
+img {
+  max-width  : 100%;
+  max-height : 100%;
+  margin     : auto;
+}
+
+/* Authentication status header */
+
+#spacing {
+  width : 30%;
+}
+
+#auth-panel {
+  z-index         : 1;
+  display         : flex;
+  position        : fixed;
+  top             : 0;
+  width           : 100%;
+  padding         : 5px;
+  border-bottom   : 1px solid black;
+  background      : -webkit-linear-gradient(
+                      top,
+                      rgb(232, 76, 60) 0%,
+                      rgb(230, 59, 42) 50%,
+                      rgb(225, 45, 27) 100%
+                    );
+  align-items     : center;
+  flex-direction  : row;
+  justify-content : space-between;
+}
+
+#logged-in-as {}
+
+#log-out {
+  width        : 30%;
+  margin-right : 2%;
+  text-align   : right;
+}
+
+#log-out-button {
+  width         : 50%;
+  height        : 40px;
+  border        : 1px solid #f69506;
+  border-radius : 6px;
+  background    : linear-gradient(
+                    #FF9800,
+                    #FFCC80
+                  );
+}
+
+/* Item creator and item list layout */
+
+#main-page {
+  z-index        : 0;
+  display        : flex;
+  position       : relative;
+  margin-top     : 100px;
+  flex-direction : row;
+}
+
+/* New item component */
+
+#new-item {
+  position     : fixed;
+  left         : 0;
+  width        : 35%;
+  height       : 100vh;
+  padding-top  : 5%;
+  border-right : 1px solid black;
+  text-align   : center;
+  flex         : 1;
+  background-color: #5cb85c
+}
+
+#submit-button,
+input {
+  display       : block;
+  box-sizing    : border-box;
+  width         : 90%;
+  height        : 26px;
+  margin        : 20px;
+  padding       : 20px;
+  border        : 1px solid #ccc;
+  border-radius : 6px;
+  font-size     : 18px;
+  line-height   : 0;
+}
+
+#submit-button {
+  color            : white;
+  background-color : #2196F3;
+  border-color: #285e8e;
+}
+
+/* Items component */
+
+#items-div {
+  width       : 62%;
+  margin-left : 35%;
+}
+
+#item {
+  display          : flex;
+  margin           : 10px;
+  border-radius    : 6px;
+  background-color : #EF9A9A;;
+  flex-direction   : column;
+}
+
+#delete-button {
+  display       : block;
+  box-sizing    : border-box;
+  width         : 60%;
+  height        : 26px;
+  margin-top    : 20px;
+  margin-right  : auto;
+  margin-bottom : 20px;
+  margin-left   : auto;
+  padding       : 20px;
+  border        : 1px solid #e84c3c;
+  border-radius : 6px;
+  font-size     : 18px;
+  line-height   : 0;
+  background-color: rgb(232, 76, 60);
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/App.css';
+import '../css/index.css';
 import firebase from '../firebase';
 import SignIn from './SignIn';
 import Navigation from './Navigation';
@@ -31,11 +31,13 @@ export default class App extends Component {
 
     render() {
         return (
-          <section>
-            <SignIn />
-            <Navigation />
-            <NewItem />
-            <ItemsList />
+          <section id="app">
+              <SignIn />
+            {/* <Navigation /> */}
+            <div id="main-page">
+              <NewItem />
+              <ItemsList />
+            </div>
           </section>
         );
       }

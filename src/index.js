@@ -11,7 +11,6 @@ import thunk from 'redux-thunk';
 import initialState from './initialState';
 import * as actions from './actions/auth';
 
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   reducers,
@@ -25,7 +24,7 @@ const Root = () => {
       <BrowserRouter>
        <div>
           <Match exactly pattern="/" component={App} />
-          <Match exactly pattern="/menu" component={Menu} />
+          {/* <Match exactly pattern="/menu" component={Menu} /> */}
        </div>
       </BrowserRouter>
     </Provider>
