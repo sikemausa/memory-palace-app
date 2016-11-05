@@ -10,8 +10,7 @@ export class SignIn extends Component {
     if(status === 'LOGGED_IN') {
       return (
         <div id="auth-panel">
-          <div id="spacing"></div>
-          <h1 className="appName">Memory Palace</h1>
+          <h1 id="app-name">Memory Palace</h1>
           <section id="log-out">
             <p id="logged-in-as">Welcome, <strong>{username}</strong>!</p>
             <button id="log-out-button" onClick={e => logOut()}>Log Out</button>

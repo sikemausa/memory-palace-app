@@ -33,6 +33,10 @@ img {
   width : 30%;
 }
 
+#app-name {
+  margin-left: 100px;
+}
+
 #auth-panel {
   z-index         : 1;
   display         : flex;
@@ -45,6 +49,10 @@ img {
   align-items     : center;
   flex-direction  : row;
   justify-content : space-between;
+  background-image: url("../temple.png");
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  background-position: 0px 5px;
 }
 
 #logged-in-as {}

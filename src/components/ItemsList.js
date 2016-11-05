@@ -10,7 +10,7 @@ export class ItemsList extends React.Component {
     const currentAuthStatus = auth.status;
     const incomingAuthStatus = nextProps.auth.status;
 
-    if (incomingAuthStatus !== currentAuthStatus && incomingAuthStatus === 'LOGGED_IN') {
+    if (incomingAuthStatus === 'LOGGED_IN') {
       fetchAllItems();
     }
   }
