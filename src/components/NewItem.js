@@ -14,13 +14,23 @@ export class NewItem extends React.Component {
     $('#imageURL').val("");
   }
 
+  enableClearButton() {
+    if($('#question').val()) $('#clear-button').removeAttr('disabled');
+    else $('#clear-button').attr('disabled', true);
+  }
+
   render() {
     const { auth, submitNewItem } = this.props;
 
     return (
       <div id="new-item">
         <h2>Create New Flashcard:</h2>
-        <input id="question" type="text" name="question" placeholder="Question" />
+        <input id="question"
+                type="text"
+                name="question"
+                placeholder="Question"
+                onKeyUp={e => this.enableClearButton()}
+                />
         <input id="answer" type="text" name="answer" placeholder="Answer" />
         <input id="mneumonic" type="text" name="mneumonic" placeholder="Mneumonic Device" />
         <input id="imageURL" type="text" name="imageURL" placeholder="Image URL" />

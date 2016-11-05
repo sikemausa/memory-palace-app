@@ -27,6 +27,16 @@ img {
   vertical-align: top;
 }
 
+button {
+  color: white;
+}
+
+a{
+  color: #41B3D3;
+  font-size: .7em;
+  text-decoration: underline;
+}
+
 /* Authentication status header */
 
 #spacing {
@@ -99,7 +109,7 @@ img {
   text-align   : center;
   flex         : 1;
   background-color: #41B3D3;
-  color: #444444;
+  color: white;
 }
 
 input {
@@ -134,9 +144,21 @@ input {
   margin: 0px;
 }
 
+#clear-button:enabled {
+  background: #EA5959;
+}
+
+#clear-button:hover {
+  background: #B72626
+}
+
 #submit-button {
-  color            : #444444;
-  background-color : #A3F7BF;
+  background : #A3F7BF;
+  color: black;
+}
+
+#submit-button:hover {
+  background: #70C48C
 }
 
 /* Items component */
@@ -177,8 +199,12 @@ input {
   border-radius : 6px;
   font-size     : 18px;
   line-height   : 0;
-  color: #444444;
+  color: white;
   background-color: #EA5959;
   border: none;
   margin-left: 80%;
+}
+
+#delete-button:hover {
+  background: #B72626
 }
