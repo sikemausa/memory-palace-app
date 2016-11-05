@@ -20,20 +20,15 @@ function fetchAllItems() {
   };
 }
 
-function deleteItem(itemData) {
+function deleteItem(itemKey) {
   return (dispatch) => {
-    let newItemKey = firebaseItems.push().key;
-
-      firebaseItems.child(newItemKey).set(itemData)
-      .then(() => {
+      firebase.database().ref(`/${userUid}/${username}/items`).child(itemKey).remove();
+      return (dispatch, getState) => {
         dispatch({
-          type: 'RECEIVE_NEW_ITEM',
-          item: itemData
+          type: 'DELETE_ITEM',
+          itemKey
         });
-      })
-      .catch(error => {
-        console.log("Error saving item: ", error);
-      });
+      };
   };
 }
 
@@ -56,5 +51,6 @@ function submitNewItem(itemData) {
 
 export {
   fetchAllItems,
-  submitNewItem
+  submitNewItem,
+  deleteItem
 };

@@ -16,7 +16,7 @@ export class ItemsList extends React.Component {
   }
 
   render() {
-    const { items } = this.props;
+    const { items, deleteItem } = this.props;
     return (
       <div id="items-div">
         <h2 id="items-title">My Cards</h2>
@@ -24,7 +24,8 @@ export class ItemsList extends React.Component {
           { (items.data).map((item, index) => {
               return (
                 <li id="item" key={index}>
-                  <button id="delete-button">Delete</button>
+                  <button id="delete-button"
+                           onClick={e => deleteItem(index)}>Delete</button>
                   <p><span className="label">Question:</span> {item.question}</p>
                   <p><span className="label">Answer:</span> {item.answer}</p>
                   <p><span className="label">Mneumonic Device:</span>  {item.mneumonic}</p>

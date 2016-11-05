@@ -25,6 +25,7 @@ img {
   max-height : 100%;
   margin     : auto;
   vertical-align: top;
+  border-radius: 20px;
 }
 
 button {
@@ -191,7 +192,6 @@ input {
 }
 
 #delete-button {
-  box-sizing    : border-box;
   width         : 20%;
   height        : 26px;
   margin-top    : 20px;
@@ -203,6 +203,7 @@ input {
   background-color: #EA5959;
   border: none;
   margin-left: 80%;
+  text-align: center;
 }
 
 #delete-button:hover {

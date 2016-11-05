@@ -3,7 +3,6 @@ import '../css/index.css';
 import firebase from '../firebase';
 import SignIn from './SignIn';
 import Navigation from './Navigation';
-// import Menu from './Menu';
 import ItemsList from './ItemsList';
 import NewItem from './NewItem';
 
