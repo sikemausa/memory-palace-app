@@ -24,12 +24,17 @@ img {
   max-width  : 100%;
   max-height : 100%;
   margin     : auto;
+  vertical-align: top;
 }
 
 /* Authentication status header */
 
 #spacing {
   width : 30%;
+}
+
+#app-name {
+  margin-left: 100px;
 }
 
 #auth-panel {
@@ -39,16 +44,15 @@ img {
   top             : 0;
   width           : 100%;
   padding         : 5px;
-  border-bottom   : 1px solid black;
-  background      : -webkit-linear-gradient(
-                      top,
-                      rgb(232, 76, 60) 0%,
-                      rgb(230, 59, 42) 50%,
-                      rgb(225, 45, 27) 100%
-                    );
+  background      : #444444;
+  color: white;
   align-items     : center;
   flex-direction  : row;
   justify-content : space-between;
+  background-image: url("../temple.png");
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  background-position: 0px 5px;
 }
 
 #logged-in-as {}
@@ -62,12 +66,10 @@ img {
 #log-out-button {
   width         : 50%;
   height        : 40px;
-  border        : 1px solid #f69506;
+  border        : 1px solid #285e8e;
   border-radius : 6px;
-  background    : linear-gradient(
-                    #FF9800,
-                    #FFCC80
-                  );
+  background-color : #A3F7BF;
+  margin-bottom: 10px;
 }
 
 /* Item creator and item list layout */
@@ -88,10 +90,10 @@ img {
   width        : 35%;
   height       : 100vh;
   padding-top  : 5%;
-  border-right : 1px solid black;
   text-align   : center;
   flex         : 1;
-  background-color: #5cb85c
+  background-color: #41B3D3;
+  color: #444444;
 }
 
 #submit-button,
@@ -102,31 +104,45 @@ input {
   height        : 26px;
   margin        : 20px;
   padding       : 20px;
-  border        : 1px solid #ccc;
   border-radius : 6px;
   font-size     : 18px;
   line-height   : 0;
+  border: none;
 }
 
 #submit-button {
-  color            : white;
-  background-color : #2196F3;
-  border-color: #285e8e;
+  color            : #444444;
+  background-color : #A3F7BF;
+  border: none;
 }
 
 /* Items component */
 
 #items-div {
-  width       : 62%;
+  width       : 65%;
   margin-left : 35%;
+  background-color: #E4E4E4;
+  padding-right: 3%;
 }
+
+#items-title {
+  text-align: center;
+}
+
+/* Single Item Component */
 
 #item {
   display          : flex;
   margin           : 10px;
-  border-radius    : 6px;
-  background-color : #EF9A9A;;
+  border-radius    : 30px;
+  background-color : white;
   flex-direction   : column;
+  padding: 20px;
+  margin: 20px;
+}
+
+.label {
+  padding: 15px;
 }
 
 #delete-button {
@@ -139,9 +155,10 @@ input {
   margin-bottom : 20px;
   margin-left   : auto;
   padding       : 20px;
-  border        : 1px solid #e84c3c;
   border-radius : 6px;
   font-size     : 18px;
   line-height   : 0;
-  background-color: rgb(232, 76, 60);
+  color: #444444;
+  background-color: #EA5959;
+  border: none;
 }

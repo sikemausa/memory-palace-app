@@ -11,7 +11,7 @@ export class NewItem extends React.Component {
 
     return (
       <div id="new-item">
-        <h2>Submit New Item:</h2>
+        <h2>Create New Flashcard:</h2>
         <input id="question" type="text" name="question" placeholder="Question" />
         <input id="answer" type="text" name="answer" placeholder="Answer" />
         <input id="mneumonic" type="text" name="mneumonic" placeholder="Mneumonic Device" />
@@ -28,7 +28,7 @@ export class NewItem extends React.Component {
               imageURL: $('#imageURL').val()
             })
           }
-        >Submit Item</button>
+        >Create</button>
     </div>);
   }
 };

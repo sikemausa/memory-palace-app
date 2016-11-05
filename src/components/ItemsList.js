@@ -10,7 +10,7 @@ export class ItemsList extends React.Component {
     const currentAuthStatus = auth.status;
     const incomingAuthStatus = nextProps.auth.status;
 
-    if (incomingAuthStatus !== currentAuthStatus && incomingAuthStatus === 'LOGGED_IN') {
+    if (incomingAuthStatus === 'LOGGED_IN') {
       fetchAllItems();
     }
   }
@@ -19,15 +19,16 @@ export class ItemsList extends React.Component {
     const { items } = this.props;
     return (
       <div id="items-div">
-        <h2>Items:</h2>
+        <h2 id="items-title">My Cards</h2>
         <ul>
           { (items.data).map((item, index) => {
               return (
                 <li id="item" key={index}>
-                  <p><strong>Question: </strong>{item.question}</p>
-                  <p><strong>Answer: </strong>{item.answer}</p>
-                  <p><strong>Mneumonic Device: </strong> {item.mneumonic}</p>
-                  <img role="presentation" src={item.imageURL} />
+                  <p><span className="label">Question:</span> {item.question}</p>
+                  <p><span className="label">Answer:</span> {item.answer}</p>
+                  <p><span className="label">Mneumonic Device:</span>  {item.mneumonic}</p>
+                  <p><span className="label">Visual Hint:</span>
+                  <img role="presentation" src={item.imageURL} /></p>
                   <button id="delete-button">Delete</button>
                 </li>
               );
