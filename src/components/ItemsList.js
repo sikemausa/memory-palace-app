@@ -24,12 +24,12 @@ export class ItemsList extends React.Component {
           { (items.data).map((item, index) => {
               return (
                 <li id="item" key={index}>
+                  <button id="delete-button">Delete</button>
                   <p><span className="label">Question:</span> {item.question}</p>
                   <p><span className="label">Answer:</span> {item.answer}</p>
                   <p><span className="label">Mneumonic Device:</span>  {item.mneumonic}</p>
                   <p><span className="label">Visual Hint:</span>
                   <img role="presentation" src={item.imageURL} /></p>
-                  <button id="delete-button">Delete</button>
                 </li>
               );
             })

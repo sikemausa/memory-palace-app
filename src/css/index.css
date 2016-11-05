@@ -34,10 +34,15 @@ img {
 }
 
 #app-name {
-  margin-left: 100px;
+  margin-left: 110px;
+}
+
+#first-name {
+  font-weight: 400;
 }
 
 #auth-panel {
+  height: 60px;
   z-index         : 1;
   display         : flex;
   position        : fixed;
@@ -50,35 +55,36 @@ img {
   flex-direction  : row;
   justify-content : space-between;
   background-image: url("../temple.png");
-  background-size: 100px 100px;
+  background-size: 50px 50px;
   background-repeat: no-repeat;
-  background-position: 0px 5px;
+  background-position: 10px 5px;
 }
 
-#logged-in-as {}
-
-#log-out {
-  width        : 30%;
-  margin-right : 2%;
-  text-align   : right;
+#logged-in-as {
+  display: inline;
 }
 
 #log-out-button {
-  width         : 50%;
-  height        : 40px;
-  border        : 1px solid #285e8e;
-  border-radius : 6px;
-  background-color : #A3F7BF;
-  margin-bottom: 10px;
+  cursor: pointer;
 }
+
+#log-out {
+  font-weight: 300;
+  width        : 30%;
+  margin-right : 2%;
+  text-align   : right;
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 /* Item creator and item list layout */
 
 #main-page {
+  font-family: 'Open Sans', sans-serif;
   z-index        : 0;
   display        : flex;
   position       : relative;
-  margin-top     : 100px;
+  margin-top     : 60px;
   flex-direction : row;
 }
 
@@ -96,13 +102,12 @@ img {
   color: #444444;
 }
 
-#submit-button,
 input {
   display       : block;
   box-sizing    : border-box;
   width         : 90%;
   height        : 26px;
-  margin        : 20px;
+  margin        : 20px auto 20px auto;
   padding       : 20px;
   border-radius : 6px;
   font-size     : 18px;
@@ -110,10 +115,28 @@ input {
   border: none;
 }
 
+#clear-button, #submit-button {
+  display       : block;
+  box-sizing    : border-box;
+  width         : 30%;
+  height        : 26px;
+  margin: 0 25px 0 10px;
+  padding       : 20px;
+  border-radius : 6px;
+  font-size     : 18px;
+  line-height   : 0;
+  border: none;
+  float: right;
+  text-align: center;
+}
+
+#clear-button {
+  margin: 0px;
+}
+
 #submit-button {
   color            : #444444;
   background-color : #A3F7BF;
-  border: none;
 }
 
 /* Items component */
@@ -146,14 +169,10 @@ input {
 }
 
 #delete-button {
-  display       : block;
   box-sizing    : border-box;
-  width         : 60%;
+  width         : 20%;
   height        : 26px;
   margin-top    : 20px;
-  margin-right  : auto;
-  margin-bottom : 20px;
-  margin-left   : auto;
   padding       : 20px;
   border-radius : 6px;
   font-size     : 18px;
@@ -161,4 +180,5 @@ input {
   color: #444444;
   background-color: #EA5959;
   border: none;
+  margin-left: 80%;
 }

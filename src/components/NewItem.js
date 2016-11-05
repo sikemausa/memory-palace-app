@@ -6,6 +6,14 @@ import $ from 'jquery';
 import * as actions from '../actions/items';
 
 export class NewItem extends React.Component {
+
+  clearInputs() {
+    $('#question').val("");
+    $('#answer').val("");
+    $('#mneumonic').val("");
+    $('#imageURL').val("");
+  }
+
   render() {
     const { auth, submitNewItem } = this.props;
 
@@ -29,6 +37,9 @@ export class NewItem extends React.Component {
             })
           }
         >Create</button>
+        <button id="clear-button"
+                onClick={e => this.clearInputs()}
+                >Clear</button>
     </div>);
   }
 };
