@@ -15,7 +15,7 @@ export default function itemsReducer(state = initialState.items, action) {
         ],
       };
 
-      case 'DELETE_REC':
+      case 'DELETE_ITEM':
         return {
           ...state,
           data: action.deleteItem

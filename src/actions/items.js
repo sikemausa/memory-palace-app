@@ -22,7 +22,7 @@ function fetchAllItems() {
 
 const deleteItem = (uid) =>{
   return (dispatch, getState) => {
-    firebase.database().ref(`/${userUid}/${username}/items`).child(uid).remove().then(() => {
+    firebaseItems.child(uid).remove().then(() => {
       dispatch({
         type:'DELETE_ITEM',
         deleteItem: uid
@@ -36,7 +36,7 @@ const deleteItem = (uid) =>{
 function submitNewItem(itemData) {
   return (dispatch) => {
     let newItemKey = firebaseItems.push().key;
-
+      itemData.uid = newItemKey;
       firebaseItems.child(newItemKey).set(itemData)
       .then(() => {
         dispatch({

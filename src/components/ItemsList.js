@@ -32,7 +32,7 @@ export class ItemsList extends React.Component {
               return (
                 <li id="item" key={index}>
                   <button id="delete-button"
-                           onClick={e => this.deleteItem(e, uid)}>Delete</button>
+                           onClick={e => deleteItem(e, uid)}>Delete</button>
                   <p><span className="label">Question:</span> {item.question}</p>
                   <p><span className="label">Answer:</span> {item.answer}</p>
                   <p><span className="label">Mneumonic Device:</span>  {item.mneumonic}</p>
