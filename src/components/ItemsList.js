@@ -15,6 +15,12 @@ export class ItemsList extends React.Component {
     }
   }
 
+  deleteItem (e, uid) {
+    e.preventDefault();
+    this.props.deleteItem(uid);
+    this.props.fetchAllItems();
+  }
+
   render() {
     const { items, deleteItem } = this.props;
     return (
@@ -22,10 +28,11 @@ export class ItemsList extends React.Component {
         <h2 id="items-title">My Cards</h2>
         <ul>
           { (items.data).map((item, index) => {
+              let uid = item.uid;
               return (
                 <li id="item" key={index}>
                   <button id="delete-button"
-                           onClick={e => deleteItem(index)}>Delete</button>
+                           onClick={e => this.deleteItem(e, uid)}>Delete</button>
                   <p><span className="label">Question:</span> {item.question}</p>
                   <p><span className="label">Answer:</span> {item.answer}</p>
                   <p><span className="label">Mneumonic Device:</span>  {item.mneumonic}</p>

@@ -166,6 +166,7 @@ input {
 
 #items-div {
   width       : 65%;
+  height: 90.5vh;
   margin-left : 35%;
   background-color: #E4E4E4;
   padding-right: 3%;

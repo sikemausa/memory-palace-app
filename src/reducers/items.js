@@ -15,9 +15,11 @@ export default function itemsReducer(state = initialState.items, action) {
         ],
       };
 
-      case 'DELETE_ITEM':
-        const itemKey = action.itemKey;
-        return state.filter(item => item.itemKey !== itemKey);
+      case 'DELETE_REC':
+        return {
+          ...state,
+          data: action.deleteItem
+        };
 
     default:
       return state;

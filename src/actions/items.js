@@ -20,17 +20,18 @@ function fetchAllItems() {
   };
 }
 
-function deleteItem(itemKey) {
-  return (dispatch) => {
-      firebase.database().ref(`/${userUid}/${username}/items`).child(itemKey).remove();
-      return (dispatch, getState) => {
-        dispatch({
-          type: 'DELETE_ITEM',
-          itemKey
-        });
-      };
+const deleteItem = (uid) =>{
+  return (dispatch, getState) => {
+    firebase.database().ref(`/${userUid}/${username}/items`).child(uid).remove().then(() => {
+      dispatch({
+        type:'DELETE_ITEM',
+        deleteItem: uid
+      });
+    }).catch(error => {
+      console.log('error deleting recommendation');
+    });
   };
-}
+};
 
 function submitNewItem(itemData) {
   return (dispatch) => {

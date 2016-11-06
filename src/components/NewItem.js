@@ -43,7 +43,8 @@ export class NewItem extends React.Component {
               question: $('#question').val(),
               answer: $('#answer').val(),
               mneumonic: $('#mneumonic').val(),
-              imageURL: $('#imageURL').val()
+              imageURL: $('#imageURL').val(),
+              uid: ''
             })
           }
         >Create</button>
