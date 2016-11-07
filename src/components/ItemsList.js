@@ -10,19 +10,14 @@ export class ItemsList extends React.Component {
     const currentAuthStatus = auth.status;
     const incomingAuthStatus = nextProps.auth.status;
 
-    if (incomingAuthStatus === 'LOGGED_IN') {
+    if (incomingAuthStatus !== currentAuthStatus && incomingAuthStatus === 'LOGGED_IN') {
       fetchAllItems();
     }
   }
 
-  deleteItem (e, uid) {
-    e.preventDefault();
-    this.props.deleteItem(uid);
-    this.props.fetchAllItems();
-  }
-
   render() {
     const { items, deleteItem } = this.props;
+    console.log(items);
     return (
       <div id="items-div">
         <h2 id="items-title">My Cards</h2>
@@ -32,7 +27,7 @@ export class ItemsList extends React.Component {
               return (
                 <li id="item" key={index}>
                   <button id="delete-button"
-                           onClick={e => deleteItem(e, uid)}>Delete</button>
+                           onClick={() => deleteItem(uid)}>Delete</button>
                   <p><span className="label">Question:</span> {item.question}</p>
                   <p><span className="label">Answer:</span> {item.answer}</p>
                   <p><span className="label">Mneumonic Device:</span>  {item.mneumonic}</p>

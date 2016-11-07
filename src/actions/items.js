@@ -22,13 +22,14 @@ function fetchAllItems() {
 
 const deleteItem = (uid) =>{
   return (dispatch, getState) => {
-    firebaseItems.child(uid).remove().then(() => {
+    firebase.database().ref(`/${userUid}/${username}/items/${uid}`).remove().then(() => {
       dispatch({
         type:'DELETE_ITEM',
         deleteItem: uid
       });
     }).catch(error => {
       console.log('error deleting recommendation');
+      console.log(error);
     });
   };
 };
@@ -44,6 +45,7 @@ function submitNewItem(itemData) {
           item: itemData
         });
       })
+      .then(console.log(itemData))
       .catch(error => {
         console.log("Error saving item: ", error);
       });
