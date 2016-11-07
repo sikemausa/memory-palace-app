@@ -21,21 +21,21 @@ ul {
 }
 
 img {
-  max-width  : 100%;
-  max-height : 100%;
-  margin     : auto;
-  vertical-align: top;
-  border-radius: 20px;
+  max-width      : 100%;
+  max-height     : 100%;
+  margin         : auto;
+  border-radius  : 20px;
+  vertical-align : top;
 }
 
 button {
-  color: white;
+  color : white;
 }
 
-a{
-  color: #41B3D3;
-  font-size: .7em;
-  text-decoration: underline;
+a {
+  color           : #41B3D3;
+  text-decoration : underline;
+  font-size       : .7em;
 }
 
 /* Authentication status header */
@@ -45,72 +45,74 @@ a{
 }
 
 #app-name {
-  margin-left: 110px;
+  font-family : 'Caesar Dressing',
+                cursive;
+  margin-left : 65px;
 }
 
 #first-name {
-  font-weight: 400;
+  font-weight : 400;
 }
 
 #auth-panel {
-  height: 60px;
-  z-index         : 1;
-  display         : flex;
-  position        : fixed;
-  top             : 0;
-  width           : 100%;
-  padding         : 5px;
-  background      : #444444;
-  color: white;
-  align-items     : center;
-  flex-direction  : row;
-  justify-content : space-between;
-  background-image: url("../temple.png");
-  background-size: 50px 50px;
-  background-repeat: no-repeat;
-  background-position: 10px 5px;
+  z-index             : 1;
+  display             : flex;
+  position            : fixed;
+  top                 : 0;
+  width               : 100%;
+  height              : 60px;
+  padding             : 5px;
+  color               : white;
+  background          : #444444;
+  background-image    : url("../temple.png");
+  background-repeat   : no-repeat;
+  background-position : 10px 5px;
+  background-size     : 50px 50px;
+  align-items         : center;
+  flex-direction      : row;
+  justify-content     : space-between;
 }
 
 #logged-in-as {
-  display: inline;
+  display : inline;
 }
 
 #log-out-button {
-  cursor: pointer;
+  cursor : pointer;
 }
 
 #log-out {
-  font-weight: 300;
   width        : 30%;
   margin-right : 2%;
   text-align   : right;
-  font-family: 'Open Sans', sans-serif;
+  font-family  : 'Open Sans',
+                 sans-serif;
+  font-weight  : 300;
 }
-
 
 /* Item creator and item list layout */
 
 #main-page {
-  font-family: 'Open Sans', sans-serif;
   z-index        : 0;
   display        : flex;
   position       : relative;
   margin-top     : 60px;
+  font-family    : 'Open Sans',
+                   sans-serif;
   flex-direction : row;
 }
 
 /* New item component */
 
 #new-item {
-  position     : fixed;
-  left         : 0;
-  width        : 35%;
-  height       : 100vh;
-  padding-top  : 5%;
-  text-align   : center;
-  flex         : 1;
-  background-color: #41B3D3;
-  color: white;
+  position         : fixed;
+  left             : 0;
+  width            : 35%;
+  height           : 100vh;
+  padding-top      : 7%;
+  color            : white;
+  background-color : #41B3D3;
+  text-align       : center;
 }
 
 input {
@@ -118,62 +120,63 @@ input {
   box-sizing    : border-box;
   width         : 90%;
   height        : 26px;
-  margin        : 20px auto 20px auto;
+  margin        : 40px auto 40px auto;
   padding       : 20px;
+  border        : none;
   border-radius : 6px;
   font-size     : 18px;
   line-height   : 0;
-  border: none;
 }
 
-#clear-button, #submit-button {
+#clear-button,
+#submit-button {
   display       : block;
   box-sizing    : border-box;
   width         : 30%;
   height        : 26px;
-  margin: 0 25px 0 10px;
+  float         : right;
+  margin        : 0 25px 0 10px;
   padding       : 20px;
+  border        : none;
   border-radius : 6px;
+  text-align    : center;
   font-size     : 18px;
   line-height   : 0;
-  border: none;
-  float: right;
-  text-align: center;
 }
 
 #clear-button {
-  margin: 0px;
+  margin : 0px;
 }
 
 #clear-button:enabled {
-  background: #EA5959;
+  background : #EA5959;
 }
 
 #clear-button:hover {
-  background: #B72626
+  background : #B72626;
 }
 
 #submit-button {
+  color      : black;
   background : #A3F7BF;
-  color: black;
 }
 
 #submit-button:hover {
-  background: #70C48C
+  background : #70C48C;
 }
 
 /* Items component */
 
 #items-div {
-  width       : 65%;
-  height: 90.5vh;
-  margin-left : 35%;
-  background-color: #E4E4E4;
-  padding-right: 3%;
+  width            : 65%;
+  height           : 100%;
+  margin-left      : 35%;
+  padding-right    : 3%;
+  background-color : #E4E4E4;
 }
 
 #items-title {
-  text-align: center;
+  text-align : center;
 }
 
 /* Single Item Component */
@@ -181,32 +184,65 @@ input {
 #item {
   display          : flex;
   margin           : 10px;
+  margin           : 20px;
+  padding          : 20px;
   border-radius    : 30px;
   background-color : white;
   flex-direction   : column;
-  padding: 20px;
-  margin: 20px;
 }
 
 .label {
-  padding: 15px;
+  padding : 15px;
 }
 
 #delete-button {
-  width         : 20%;
-  height        : 26px;
-  margin-top    : 20px;
-  padding       : 20px;
-  border-radius : 6px;
-  font-size     : 18px;
-  line-height   : 0;
-  color: white;
-  background-color: #EA5959;
-  border: none;
-  margin-left: 80%;
-  text-align: center;
+  width            : 20%;
+  height           : 26px;
+  margin-top       : 20px;
+  margin-left      : 80%;
+  padding          : 20px;
+  color            : white;
+  border           : none;
+  border-radius    : 6px;
+  background-color : #EA5959;
+  text-align       : center;
+  font-size        : 18px;
+  line-height      : 0;
 }
 
 #delete-button:hover {
-  background: #B72626
+  background : #B72626;
+}
+
+/* Signin Button */
+
+#sign-in-page {
+  display         : flex;
+  height          : 100vh;
+  background      : linear-gradient(
+                      #41B3D3,
+                      #61D2DC
+                    );
+  align-items     : center;
+  flex-direction  : column;
+  justify-content : center;
+}
+
+#title {
+  font-family : 'Caesar Dressing',
+                cursive;
+  font-size   : 3.5em;
+}
+
+#logo {
+  content : url('../temple2.png');
+  width   : 200px;
+  height  : 200px;
+}
+
+#sign-in-button {
+  content : url('../fb-login.png');
+  display : block;
+  margin  : 0px auto 0px auto;
+  cursor  : pointer;
 }
