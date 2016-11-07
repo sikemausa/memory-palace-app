@@ -4,6 +4,7 @@ body {
   padding        : 0;
   font-family    : sans-serif;
   flex-direction : column;
+  background: #E4E4E4;
 }
 
 html {
@@ -45,9 +46,7 @@ a {
 }
 
 #app-name {
-  font-family : 'Caesar Dressing',
-                cursive;
-  margin-left : 65px;
+  margin-left : 80px;
 }
 
 #first-name {
