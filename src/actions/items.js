@@ -25,7 +25,7 @@ const deleteItem = (uid) =>{
     firebase.database().ref(`/${userUid}/${username}/items/${uid}`).remove().then(() => {
       dispatch({
         type:'DELETE_ITEM',
-        deleteItem: uid
+        uid
       });
     }).catch(error => {
       console.log('error deleting recommendation');
@@ -45,7 +45,6 @@ function submitNewItem(itemData) {
           item: itemData
         });
       })
-      .then(console.log(itemData))
       .catch(error => {
         console.log("Error saving item: ", error);
       });

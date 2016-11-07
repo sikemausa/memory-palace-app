@@ -16,10 +16,9 @@ export default function itemsReducer(state = initialState.items, action) {
       };
 
       case 'DELETE_ITEM':
-        return {
-          ...state,
-          data: action.deleteItem
-        };
+        return Object.assign({}, state, {
+          data: state.data.filter(item => item.uid !== action.uid)
+        });
 
     default:
       return state;
