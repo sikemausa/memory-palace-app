@@ -15,6 +15,12 @@ export default function itemsReducer(state = initialState.items, action) {
         ],
       };
 
+      case 'DELETE_ITEM':
+        return {
+          ...state,
+          data: action.deleteItem
+        };
+
     default:
       return state;
   }

@@ -5,6 +5,6 @@ export const initialState = {
     uid: null
   },
   items: {
-    data: []
+    data: [],
   }
 };
