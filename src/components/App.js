@@ -5,6 +5,7 @@ import SignIn from './SignIn';
 import Navigation from './Navigation';
 import ItemsList from './ItemsList';
 import NewItem from './NewItem';
+import LoginPage from './LoginPage';
 
 export default class App extends Component {
   constructor() {
@@ -29,10 +30,10 @@ export default class App extends Component {
     }
 
     render() {
+      if(this.state.user){
         return (
           <section id="app">
               <SignIn />
-            {/* <Navigation /> */}
             <div id="main-page">
               <NewItem />
               <ItemsList />
@@ -40,4 +41,8 @@ export default class App extends Component {
           </section>
         );
       }
+      else return (
+        <LoginPage />
+      )
     }
+}

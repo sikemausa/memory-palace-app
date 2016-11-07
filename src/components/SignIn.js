@@ -25,14 +25,11 @@ export class SignIn extends Component {
     }
     else {
       return (
-        <section className="auth-panel">
-          <button
-          className="SignInButton"
+        <a id="sign-in-button"
           disabled={(status === 'AWAITING_AUTH_RESPONSE')}
-          onClick={e => logIn()}>
-          Sign In
-          </button>
-        </section>
+          onClick={e => logIn()}
+          >
+        </a>
       );
     }
   }
