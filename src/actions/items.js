@@ -2,6 +2,7 @@ import firebase from 'firebase';
 import { userUid, username } from './auth';
 
 let firebaseItems;
+const firebaseImages = firebase.storage().ref('images');
 
 function fetchAllItems() {
   return (dispatch, getState) => {
@@ -38,6 +39,9 @@ function submitNewItem(itemData) {
   return (dispatch) => {
     let newItemKey = firebaseItems.push().key;
       itemData.uid = newItemKey;
+      // if itemData.image.name do the following, else do it without the image part
+      firebaseImages.child(itemData.image.name).put(itemData.image).then(result => {
+      itemData.image = result.downloadURL;
       firebaseItems.child(newItemKey).set(itemData)
       .then(() => {
         dispatch({
@@ -48,7 +52,8 @@ function submitNewItem(itemData) {
       .catch(error => {
         console.log("Error saving item: ", error);
       });
-  };
+  });
+};
 }
 
 export {
