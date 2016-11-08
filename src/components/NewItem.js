@@ -34,6 +34,7 @@ export class NewItem extends React.Component {
         <input id="answer" type="text" name="answer" placeholder="Answer" />
         <input id="mneumonic" type="text" name="mneumonic" placeholder="Mneumonic Device" />
         <input id="imageURL" type="text" name="imageURL" placeholder="Image URL" />
+        <input id="image" type="file" name="image" />
 
         <button
           id="submit-button"
@@ -44,6 +45,7 @@ export class NewItem extends React.Component {
               answer: $('#answer').val(),
               mneumonic: $('#mneumonic').val(),
               imageURL: $('#imageURL').val(),
+              image: $('#image').get(0).files[0],
               uid: ''
             })
           }

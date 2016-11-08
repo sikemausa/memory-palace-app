@@ -33,6 +33,8 @@ export class ItemsList extends React.Component {
                   <p><span className="label">Mneumonic Device:</span>  {item.mneumonic}</p>
                   <p><span className="label">Visual Hint:</span>
                   <img role="presentation" src={item.imageURL} /></p>
+                  <p><span className="label">Visual Hint:</span>
+                  <img role="presentation" src={item.image} /></p>
                 </li>
               );
             })
