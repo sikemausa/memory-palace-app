@@ -47,6 +47,8 @@ a {
 
 #app-name {
   margin-left : 80px;
+  font-family : 'Caesar Dressing',
+                cursive;
 }
 
 #first-name {
@@ -110,6 +112,7 @@ a {
   height           : 100vh;
   color            : white;
   background-color : #41B3D3;
+  padding-top: 5%  ;
   text-align       : center;
 }
 
@@ -134,7 +137,7 @@ input {
   height        : 26px;
   float         : right;
   margin        : 0 25px 0 10px;
-  padding       : 20px;
+  padding       : 20px 0 20px 0;
   border        : none;
   border-radius : 6px;
   text-align    : center;
@@ -207,7 +210,7 @@ input#image {
   height           : 26px;
   margin-top       : 20px;
   margin-left      : 80%;
-  padding          : 20px;
+  padding          : 20px 0 20px 0;
   color            : white;
   border           : none;
   border-radius    : 6px;
@@ -252,4 +255,41 @@ input#image {
   display : block;
   margin  : 0px auto 0px auto;
   cursor  : pointer;
+}
+
+@media screen and (max-width: 650px) {
+
+  #main-page{
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  #new-item{
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  #items-div {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  input[type=text], input[type=url], input[type=email], input[type=password], input[type=tel] {
+    -webkit-appearance: none; -moz-appearance: none;
+    display: block;
+    margin: 30px auto 30px auto;
+    width: 90%; height: 40px;
+    line-height: 40px; font-size: 17px;
+    border: 1px solid #bbb;
+  }
+
+  #auth-panel{
+    height: 70px;
+  }
+
+  ul{
+    padding: 0px;
+  }
 }

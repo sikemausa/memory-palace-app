@@ -24,9 +24,6 @@ export class ItemsList extends React.Component {
         <ul>
           { (items.data).map((item, index) => {
               let uid = item.uid;
-              let image;
-              if(item.image) {image = item.image;}
-              else if (item.imageURL) {image = item.imageURL;}
               return (
                 <li id="item" key={index}>
                   <button id="delete-button"
@@ -35,9 +32,9 @@ export class ItemsList extends React.Component {
                   <p><span className="label">Answer:</span> {item.answer}</p>
                   <p><span className="label">Mneumonic Device:</span>  {item.mneumonic}</p>
                     <p><span className="label">Visual Hint:</span>
-                    <img role="presentation" src={image} /></p>
+                    <img role="presentation" src={item.imageURL} /></p>
                     <p><span className="label">Visual Hint:</span>
-                    <img role="presentation" src={image} /></p>
+                    <img role="presentation" src={item.image} /></p>
                 </li>
               );
             })

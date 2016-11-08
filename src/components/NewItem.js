@@ -12,6 +12,7 @@ export class NewItem extends React.Component {
     $('#answer').val("");
     $('#mneumonic').val("");
     $('#imageURL').val("");
+    $('#image').val("");
   }
 
   enableClearButton() {
@@ -32,7 +33,7 @@ export class NewItem extends React.Component {
                 onKeyUp={e => this.enableClearButton()}
                 />
         <input id="answer" type="text" name="answer" placeholder="Answer" />
-        <input id="mneumonic" type="text" name="mneumonic" placeholder="Mneumonic Device" />
+        <input id="mneumonic" type="text" name="mnemonic" placeholder="Mnemonic Device" />
         <div id="image-inputs">
           <input id="imageURL" type="text" name="imageURL" placeholder="Image URL" />
           <span id="or">OR</span>
