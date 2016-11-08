@@ -108,7 +108,6 @@ a {
   left             : 0;
   width            : 35%;
   height           : 100vh;
-  padding-top      : 7%;
   color            : white;
   background-color : #41B3D3;
   text-align       : center;
@@ -119,7 +118,7 @@ input {
   box-sizing    : border-box;
   width         : 90%;
   height        : 26px;
-  margin        : 40px auto 40px auto;
+  margin        : 30px auto 30px auto;
   padding       : 20px;
   border        : none;
   border-radius : 6px;
@@ -141,6 +140,15 @@ input {
   text-align    : center;
   font-size     : 18px;
   line-height   : 0;
+}
+
+input#imageURL, input#image {
+  margin-bottom: 0px;
+}
+
+input#image {
+  padding: 0px;
+  margin: 0 0 30px 5%;
 }
 
 #clear-button {

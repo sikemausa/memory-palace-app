@@ -39,8 +39,9 @@ function submitNewItem(itemData) {
   return (dispatch) => {
     let newItemKey = firebaseItems.push().key;
       itemData.uid = newItemKey;
+      // if itemData.image.name do the following, else do it without the image part
       firebaseImages.child(itemData.image.name).put(itemData.image).then(result => {
-        itemData.image = result.downloadURL;
+      itemData.image = result.downloadURL;
       firebaseItems.child(newItemKey).set(itemData)
       .then(() => {
         dispatch({
