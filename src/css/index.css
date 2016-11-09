@@ -2,9 +2,9 @@ body {
   display        : flex;
   margin         : 0;
   padding        : 0;
+  background     : #E4E4E4;
   font-family    : sans-serif;
   flex-direction : column;
-  background: #E4E4E4;
 }
 
 html {
@@ -110,9 +110,9 @@ a {
   left             : 0;
   width            : 35%;
   height           : 100vh;
+  padding-top      : 5%;
   color            : white;
   background-color : #41B3D3;
-  padding-top: 5%  ;
   text-align       : center;
 }
 
@@ -145,13 +145,14 @@ input {
   line-height   : 0;
 }
 
-input#imageURL, input#image {
-  margin-bottom: 0px;
+input#image,
+input#imageURL {
+  margin-bottom : 0px;
 }
 
 input#image {
-  padding: 0px;
-  margin: 0 0 30px 5%;
+  margin  : 0 0 30px 5%;
+  padding : 0px;
 }
 
 #clear-button {
@@ -160,6 +161,10 @@ input#image {
 
 #clear-button:enabled {
   background : #EA5959;
+}
+
+#clear-button:disabled:hover, #submit-button:disabled:hover {
+  background: #c0c0c0
 }
 
 #clear-button:hover {
@@ -257,39 +262,54 @@ input#image {
   cursor  : pointer;
 }
 
-@media screen and (max-width: 650px) {
-
-  #main-page{
-    flex-direction: column;
-    flex-wrap: wrap;
+@media screen
+       and (max-width : 650px) {
+  #main-page {
+    flex-direction : column;
+    flex-wrap      : wrap;
   }
 
-  #new-item{
-    display: block;
-    position: relative;
-    width: 100%;
+  #new-item {
+    display  : block;
+    position : relative;
+    width    : 100%;
   }
 
   #items-div {
-    width: 100%;
-    padding: 0;
-    margin: 0;
+    width   : 100%;
+    margin  : 0;
+    padding : 0;
   }
 
-  input[type=text], input[type=url], input[type=email], input[type=password], input[type=tel] {
-    -webkit-appearance: none; -moz-appearance: none;
-    display: block;
-    margin: 30px auto 30px auto;
-    width: 90%; height: 40px;
-    line-height: 40px; font-size: 17px;
-    border: 1px solid #bbb;
+  input[type=email],
+  input[type=password],
+  input[type=tel],
+  input[type=text],
+  input[type=url] {
+    display            : block;
+    -moz-appearance    : none;
+    -webkit-appearance : none;
+    width              : 90%;
+    height             : 40px;
+    margin             : 30px auto 30px auto;
+    border             : 1px solid #bbb;
+    font-size          : 17px;
+    line-height        : 40px;
   }
 
-  #auth-panel{
-    height: 70px;
+  #auth-panel {
+    height : 70px;
   }
 
-  ul{
-    padding: 0px;
+  ul {
+    padding : 0px;
   }
+}
+
+#sign-in-button {
+  content : url('../fb-login.png');
+  display : block;
+  height: 150px;
+  width: 300px;
+  cursor  : pointer;
 }

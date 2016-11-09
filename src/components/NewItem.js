@@ -6,18 +6,32 @@ import $ from 'jquery';
 import * as actions from '../actions/items';
 
 export class NewItem extends React.Component {
-
-  clearInputs() {
-    $('#question').val("");
-    $('#answer').val("");
-    $('#mneumonic').val("");
-    $('#imageURL').val("");
-    $('#image').val("");
+  constructor(){
+    super();
+    this.state = {
+      question: '',
+      answer: '',
+      mnemonic: '',
+      image: '',
+      clearButtonDisabled: true
+    };
   }
 
-  enableClearButton() {
-    if($('#question').val()) $('#clear-button').removeAttr('disabled');
-    else $('#clear-button').attr('disabled', true);
+  checkInputs() {
+    if(this.state.question || this.state.answer || this.state.mnemonic || this.state.image){
+      this.setState({clearButtonDisabled: false});
+    }
+    else this.setState({clearButtonDisabled: true});
+  }
+
+  clearInputs() {
+    this.setState({
+      question: '',
+      answer: '',
+      mnemonic: '',
+      image: '',
+      clearButtonDisabled: true
+    });
   }
 
   render() {
@@ -30,31 +44,46 @@ export class NewItem extends React.Component {
                 type="text"
                 name="question"
                 placeholder="Question"
-                onKeyUp={e => this.enableClearButton()}
+                value={this.state.question}
+                onKeyUp={e => this.checkInputs()}
+                onChange={e => this.setState({question: e.target.value})}
                 />
-        <input id="answer" type="text" name="answer" placeholder="Answer" />
-        <input id="mneumonic" type="text" name="mnemonic" placeholder="Mnemonic Device" />
-        <div id="image-inputs">
-          <input id="imageURL" type="text" name="imageURL" placeholder="Image URL" />
-          <span id="or">OR</span>
-          <input id="image" type="file" name="image" />
-        </div>
+        <input id="answer"
+               type="text"
+               name="answer"
+               placeholder="Answer"
+               value={this.state.answer}
+               onChange={e => this.setState({answer: e.target.value})}
+               onKeyUp={e => this.checkInputs()}
+               />
+        <input id="mneumonic"
+               type="text"
+               name="mnemonic"
+               placeholder="Mnemonic Device"
+               value={this.state.mnemonic}
+               onChange={e => this.setState({mnemonic: e.target.value})}
+               onKeyUp={e => this.checkInputs()}
+               />
+          <input id="image"
+                 type="file"
+                 name="image"
+                 onChange={e => this.setState({image: $('#image').get(0).files[0]})}
+ />
 
         <button
           id="submit-button"
-          disabled={(auth.status !== 'LOGGED_IN')}
           onClick={e => submitNewItem({
               user: auth.username,
-              question: $('#question').val(),
-              answer: $('#answer').val(),
-              mneumonic: $('#mneumonic').val(),
-              imageURL: $('#imageURL').val(),
-              image: $('#image').get(0).files[0],
+              question: this.state.question,
+              answer: this.state.answer,
+              mneumonic: this.state.mnemonic,
+              image: this.state.image,
               uid: ''
             })
           }
         >Create</button>
         <button id="clear-button"
+                disabled={this.state.clearButtonDisabled}
                 onClick={e => this.clearInputs()}
                 >Clear</button>
     </div>);

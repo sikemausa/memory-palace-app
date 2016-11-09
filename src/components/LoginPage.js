@@ -8,7 +8,6 @@ export class ItemsList extends React.Component {
 
   render() {
     const { items, deleteItem } = this.props;
-    console.log(items);
     return (
       <div id="sign-in-page">
         <div id="logo"></div>

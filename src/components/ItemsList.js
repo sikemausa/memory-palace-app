@@ -17,7 +17,6 @@ export class ItemsList extends React.Component {
 
   render() {
     const { items, deleteItem } = this.props;
-    console.log(items);
     return (
       <div id="items-div">
         <h2 id="items-title">My Cards</h2>
@@ -31,8 +30,6 @@ export class ItemsList extends React.Component {
                   <p><span className="label">Question:</span> {item.question}</p>
                   <p><span className="label">Answer:</span> {item.answer}</p>
                   <p><span className="label">Mneumonic Device:</span>  {item.mneumonic}</p>
-                    <p><span className="label">Visual Hint:</span>
-                    <img role="presentation" src={item.imageURL} /></p>
                     <p><span className="label">Visual Hint:</span>
                     <img role="presentation" src={item.image} /></p>
                 </li>

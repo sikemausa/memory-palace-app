@@ -39,8 +39,6 @@ function submitNewItem(itemData) {
   return (dispatch) => {
     let newItemKey = firebaseItems.push().key;
       itemData.uid = newItemKey;
-      // if itemData.image.name do the following, else do it without the image part
-      if(itemData.image){
         firebaseImages.child(itemData.image.name).put(itemData.image).then(result => {
         itemData.image = result.downloadURL;
         firebaseItems.child(newItemKey).set(itemData)
@@ -54,19 +52,6 @@ function submitNewItem(itemData) {
           console.log("Error saving item: ", error);
         });
     });
-      }
-      else {
-        firebaseItems.child(newItemKey).set(itemData)
-        .then(() => {
-          dispatch({
-            type: 'RECEIVE_NEW_ITEM',
-            item: itemData
-          });
-        })
-        .catch(error => {
-          console.log("Error saving item: ", error);
-        });
-      }
 };
 }
 
