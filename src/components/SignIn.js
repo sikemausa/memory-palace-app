@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../actions/auth';
+import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import * as actions from "../actions/auth";
 
 export class SignIn extends Component {
 
   render() {
     const { status, username, logIn, logOut } = this.props;
-    if(status === 'LOGGED_IN') {
+    if(status === "LOGGED_IN") {
       let firstName = username;
       let lastIndex = username.lastIndexOf(" ");
       firstName = firstName.substring(0, lastIndex);
@@ -26,7 +26,7 @@ export class SignIn extends Component {
     else {
       return (
         <a id="sign-in-button"
-          disabled={(status === 'AWAITING_AUTH_RESPONSE')}
+          disabled={(status === "AWAITING_AUTH_RESPONSE")}
           onClick={e => logIn()}
           >
         </a>

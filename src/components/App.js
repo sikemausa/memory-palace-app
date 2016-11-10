@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import '../css/index.css';
-import firebase from '../firebase';
-import SignIn from './SignIn';
-import Navigation from './Navigation';
-import ItemsList from './ItemsList';
-import NewItem from './NewItem';
-import LoginPage from './LoginPage';
+import React, { Component } from "react";
+import "../css/index.css";
+import firebase from "../firebase";
+import SignIn from "./SignIn";
+import Navigation from "./Navigation";
+import ItemsList from "./ItemsList";
+import NewItem from "./NewItem";
+import LoginPage from "./LoginPage";
 
 export default class App extends Component {
   constructor() {

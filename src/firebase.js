@@ -1,4 +1,4 @@
-const firebase = require('firebase');
+const firebase = require("firebase");
   var config = {
     apiKey: "AIzaSyDLMJIq-7KzETD3wLHAKLc7vbr_NyCTDZE",
     authDomain: "memory-palace-ba577.firebaseapp.com",

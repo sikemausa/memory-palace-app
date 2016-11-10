@@ -1,6 +1,6 @@
 export const initialState = {
   auth: {
-    status: 'ANONYMOUS',
+    status: "ANONYMOUS",
     username: null,
     uid: null
   },

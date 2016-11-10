@@ -1,7 +1,7 @@
-import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as actions from '../actions/items';
+import React from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import * as actions from "../actions/items";
 
 export class ItemsList extends React.Component {
 
@@ -10,10 +10,12 @@ export class ItemsList extends React.Component {
     const currentAuthStatus = auth.status;
     const incomingAuthStatus = nextProps.auth.status;
 
-    if (incomingAuthStatus !== currentAuthStatus && incomingAuthStatus === 'LOGGED_IN') {
+    if (incomingAuthStatus !== currentAuthStatus && incomingAuthStatus === "LOGGED_IN") {
       fetchAllItems();
     }
   }
+
+// pull out map function and call it in render
 
   render() {
     const { items, deleteItem } = this.props;

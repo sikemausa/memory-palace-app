@@ -1,18 +1,18 @@
-import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import $ from 'jquery';
+import React from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import $ from "jquery";
 
-import * as actions from '../actions/items';
+import * as actions from "../actions/items";
 
 export class NewItem extends React.Component {
   constructor(){
     super();
     this.state = {
-      question: '',
-      answer: '',
-      mnemonic: '',
-      image: '',
+      question: "",
+      answer: "",
+      mnemonic: "",
+      image: "",
       clearButtonDisabled: true,
       submitButtonDisabled: true
     };
@@ -23,7 +23,7 @@ export class NewItem extends React.Component {
       this.setState({clearButtonDisabled: false, submitButtonDisabled: false});
     }
     else this.setState({clearButtonDisabled: true, submitButtonDisabled: true});
-    if(this.state.question && this.state.answer && this.state.mnemonic){
+      if(this.state.question && this.state.answer && this.state.mnemonic){
       this.setState({ submitButtonDisabled: false });
     }
     else this.setState({ submitButtonDisabled: true });
@@ -31,10 +31,10 @@ export class NewItem extends React.Component {
 
   clearInputs() {
     this.setState({
-      question: '',
-      answer: '',
-      mnemonic: '',
-      image: '',
+      question: "",
+      answer: "",
+      mnemonic: "",
+      image: "",
       clearButtonDisabled: true
     });
   }
@@ -72,7 +72,7 @@ export class NewItem extends React.Component {
           <input id="image"
                  type="file"
                  name="image"
-                 onChange={e => this.setState({image: $('#image').get(0).files[0]})}
+                 onChange={e => this.setState({image: $("#image").get(0).files[0]})}
  />
           <p id="image-error" hidden="true">Please select an image to upload</p>
 
@@ -85,7 +85,7 @@ export class NewItem extends React.Component {
               answer: this.state.answer,
               mneumonic: this.state.mnemonic,
               image: this.state.image,
-              uid: ''
+              uid: ""
             })
           }
         >Create</button>

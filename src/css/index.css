@@ -47,7 +47,7 @@ a {
 
 #app-name {
   margin-left : 80px;
-  font-family : 'Caesar Dressing',
+  font-family : "Caesar Dressing",
                 cursive;
 }
 
@@ -86,7 +86,7 @@ a {
   width        : 30%;
   margin-right : 2%;
   text-align   : right;
-  font-family  : 'Open Sans',
+  font-family  : "Open Sans",
                  sans-serif;
   font-weight  : 300;
 }
@@ -98,7 +98,7 @@ a {
   display        : flex;
   position       : relative;
   margin-top     : 60px;
-  font-family    : 'Open Sans',
+  font-family    : "Open Sans",
                    sans-serif;
   flex-direction : row;
 }
@@ -163,9 +163,12 @@ input#image {
   background : #EA5959;
 }
 
-#clear-button:disabled:hover, #submit-button:disabled:hover, #submit-button:disabled, #clear-button:disabled {
-  background: #c0c0c0;
-  color: white;
+#clear-button:disabled:hover,
+#clear-button:disabled,
+#submit-button:disabled:hover,
+#submit-button:disabled {
+  color      : white;
+  background : #c0c0c0;
 }
 
 #clear-button:hover {
@@ -245,19 +248,19 @@ input#image {
 }
 
 #title {
-  font-family : 'Caesar Dressing',
+  font-family : "Caesar Dressing",
                 cursive;
   font-size   : 3.5em;
 }
 
 #logo {
-  content : url('../temple2.png');
+  content : url("../temple2.png");
   width   : 200px;
   height  : 200px;
 }
 
 #sign-in-button {
-  content : url('../fb-login.png');
+  content : url("../fb-login.png");
   display : block;
   margin  : 0px auto 0px auto;
   cursor  : pointer;
@@ -308,9 +311,9 @@ input#image {
 }
 
 #sign-in-button {
-  content : url('../fb-login.png');
+  content : url("../fb-login.png");
   display : block;
-  height: 150px;
-  width: 300px;
+  width   : 300px;
+  height  : 150px;
   cursor  : pointer;
 }

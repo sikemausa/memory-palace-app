@@ -1,4 +1,4 @@
-import firebase, { provider } from '../firebase';
+import firebase, { provider } from "../firebase";
 
 let userUid;
 let username;
@@ -10,14 +10,14 @@ function startListeningToAuth() {
         username = authData.displayName;
         userUid = authData.uid;
         dispatch({
-          type: 'LOGIN',
+          type: "LOGIN",
           uid: authData.uid,
           username: authData.displayName
         });
       } else {
-        if (getState().auth.status !== 'ANONYMOUS') {
+        if (getState().auth.status !== "ANONYMOUS") {
           dispatch({
-            type: 'LOGOUT'
+            type: "LOGOUT"
           });
         }
       }
@@ -28,19 +28,19 @@ function startListeningToAuth() {
 function logIn() {
   return (dispatch) => {
     dispatch({
-      type: 'ATTEMPTING_LOGIN'
+      type: "ATTEMPTING_LOGIN"
     });
 
     firebase.auth().signInWithPopup(provider)
     .then(result => {
       dispatch({
-        type: 'LOGIN',
+        type: "LOGIN",
         uid: result.user.uid,
         username: result.user.displayName
       });
     })
     .catch(error => {
-      console.log('Error logging in: ', error);
+      console.log("Error logging in: ", error);
     });
   };
 }
@@ -49,15 +49,15 @@ function logIn() {
 function logOut() {
   return (dispatch,) => {
     dispatch({
-      type: 'LOGOUT'
+      type: "LOGOUT"
     })
 
     firebase.auth().signOut()
     .then(() => {
-      console.log('Sign out successful!')
+      console.log("Sign out successful!")
     })
     .catch(error => {
-      console.log('SIGN OUT ERROR: ', error);
+      console.log("SIGN OUT ERROR: ", error);
     });
   }
 };

@@ -1,13 +1,13 @@
-import { initialState } from '../initialState';
+import { initialState } from "../initialState";
 
 export default function itemsReducer(state = initialState.items, action) {
   switch(action.type) {
-    case 'RECEIVE_ALL_ITEMS':
+    case "RECEIVE_ALL_ITEMS":
       return {
         data: action.items
       };
 
-    case 'RECEIVE_NEW_ITEM':
+    case "RECEIVE_NEW_ITEM":
       return {
         data: [
           ...state.data || [],
@@ -15,12 +15,12 @@ export default function itemsReducer(state = initialState.items, action) {
         ],
       };
 
-      case 'DELETE_ITEM':
+      case "DELETE_ITEM":
         return Object.assign({}, state, {
           data: state.data.filter(item => item.uid !== action.uid)
         });
 
-      case 'EDIT_ITEM':
+      case "EDIT_ITEM":
             let newState = Object.assign({}, state, {
             data: state.data.filter(item => item.uid !== action.uid)
           });

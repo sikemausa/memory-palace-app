@@ -1,20 +1,20 @@
-import firebase from 'firebase';
-import { userUid, username } from './auth';
+import firebase from "firebase";
+import { userUid, username } from "./auth";
 
 let firebaseItems;
-const firebaseImages = firebase.storage().ref('images');
+const firebaseImages = firebase.storage().ref("images");
 
 function fetchAllItems() {
   return (dispatch, getState) => {
     let fetchedItems = [];
     firebaseItems = firebase.database().ref(`/${userUid}/${username}/items`);
-    firebaseItems.once('value').then(result => {
+    firebaseItems.once("value").then(result => {
       result.forEach(item => {
         fetchedItems.push(item.val());
       });
 
       dispatch({
-        type: 'RECEIVE_ALL_ITEMS',
+        type: "RECEIVE_ALL_ITEMS",
         items: fetchedItems
       });
     });
@@ -26,11 +26,11 @@ const editItem = (itemData) =>{
     firebase.database().ref(`/${userUid}/${username}/items/${itemData.uid}`).set({itemData})
     .then(() => {
       dispatch({
-        type:'EDIT',
+        type:"EDIT",
         itemData
       });
     }).catch(error => {
-      console.log('error editing recommendation');
+      console.log("error editing recommendation");
       console.log(error);
     });
   };
@@ -40,11 +40,11 @@ const deleteItem = (uid) =>{
   return (dispatch, getState) => {
     firebase.database().ref(`/${userUid}/${username}/items/${uid}`).remove().then(() => {
       dispatch({
-        type:'DELETE_ITEM',
+        type:"DELETE_ITEM",
         uid
       });
     }).catch(error => {
-      console.log('error deleting recommendation');
+      console.log("error deleting recommendation");
       console.log(error);
     });
   };
@@ -59,7 +59,7 @@ function submitNewItem(itemData) {
         firebaseItems.child(newItemKey).set(itemData)
         .then(() => {
           dispatch({
-            type: 'RECEIVE_NEW_ITEM',
+            type: "RECEIVE_NEW_ITEM",
             item: itemData
           });
         })
