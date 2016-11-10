@@ -13,15 +13,20 @@ export class NewItem extends React.Component {
       answer: '',
       mnemonic: '',
       image: '',
-      clearButtonDisabled: true
+      clearButtonDisabled: true,
+      submitButtonDisabled: true
     };
   }
 
   checkInputs() {
     if(this.state.question || this.state.answer || this.state.mnemonic || this.state.image){
-      this.setState({clearButtonDisabled: false});
+      this.setState({clearButtonDisabled: false, submitButtonDisabled: false});
     }
-    else this.setState({clearButtonDisabled: true});
+    else this.setState({clearButtonDisabled: true, submitButtonDisabled: true});
+    if(this.state.question && this.state.answer && this.state.mnemonic){
+      this.setState({ submitButtonDisabled: false });
+    }
+    else this.setState({ submitButtonDisabled: true });
   }
 
   clearInputs() {
@@ -69,9 +74,11 @@ export class NewItem extends React.Component {
                  name="image"
                  onChange={e => this.setState({image: $('#image').get(0).files[0]})}
  />
+          <p id="image-error" hidden="true">Please select an image to upload</p>
 
         <button
           id="submit-button"
+          disabled={this.state.submitButtonDisabled}
           onClick={e => submitNewItem({
               user: auth.username,
               question: this.state.question,

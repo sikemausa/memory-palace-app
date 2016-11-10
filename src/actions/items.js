@@ -21,6 +21,21 @@ function fetchAllItems() {
   };
 }
 
+const editItem = (itemData) =>{
+  return (dispatch, getState) => {
+    firebase.database().ref(`/${userUid}/${username}/items/${itemData.uid}`).set({itemData})
+    .then(() => {
+      dispatch({
+        type:'EDIT',
+        itemData
+      });
+    }).catch(error => {
+      console.log('error editing recommendation');
+      console.log(error);
+    });
+  };
+};
+
 const deleteItem = (uid) =>{
   return (dispatch, getState) => {
     firebase.database().ref(`/${userUid}/${username}/items/${uid}`).remove().then(() => {

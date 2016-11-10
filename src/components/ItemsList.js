@@ -25,13 +25,20 @@ export class ItemsList extends React.Component {
               let uid = item.uid;
               return (
                 <li id="item" key={index}>
-                  <button id="delete-button"
-                           onClick={() => deleteItem(uid)}>Delete</button>
-                  <p><span className="label">Question:</span> {item.question}</p>
-                  <p><span className="label">Answer:</span> {item.answer}</p>
-                  <p><span className="label">Mneumonic Device:</span>  {item.mneumonic}</p>
-                    <p><span className="label">Visual Hint:</span>
-                    <img role="presentation" src={item.image} /></p>
+                  <button id="delete-button" onClick={() => deleteItem(uid)}>Delete</button>
+                  <p onClick={ e => this.setState({isEditing: true})}>
+                    <span className="label">Question:</span> {item.question}
+                  </p>
+                  <p onClick={ e => this.setState({isEditing: true})}>
+                    <span className="label">Answer:</span> {item.answer}
+                  </p>
+                  <p onClick={ e => this.setState({isEditing: true})}>
+                    <span className="label">Mneumonic Device:</span>  {item.mneumonic}
+                  </p>
+                  <p>
+                    <span className="label">Visual Hint:</span>
+                    <img role="presentation" src={item.image} />
+                  </p>
                 </li>
               );
             })

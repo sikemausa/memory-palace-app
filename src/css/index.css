@@ -159,12 +159,13 @@ input#image {
   margin : 0px;
 }
 
-#clear-button:enabled {
+#clear-button {
   background : #EA5959;
 }
 
-#clear-button:disabled:hover, #submit-button:disabled:hover {
-  background: #c0c0c0
+#clear-button:disabled:hover, #submit-button:disabled:hover, #submit-button:disabled, #clear-button:disabled {
+  background: #c0c0c0;
+  color: white;
 }
 
 #clear-button:hover {

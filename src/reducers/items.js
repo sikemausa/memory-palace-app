@@ -20,6 +20,17 @@ export default function itemsReducer(state = initialState.items, action) {
           data: state.data.filter(item => item.uid !== action.uid)
         });
 
+      case 'EDIT_ITEM':
+            let newState = Object.assign({}, state, {
+            data: state.data.filter(item => item.uid !== action.uid)
+          });
+          return {
+            data: [
+              ...newState.data || [],
+              action.item
+            ]
+          };
+
     default:
       return state;
   }
