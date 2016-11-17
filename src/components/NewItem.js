@@ -34,8 +34,6 @@ export class NewItem extends React.Component {
         <input id="answer" type="text" name="answer" placeholder="Answer" />
         <input id="mneumonic" type="text" name="mneumonic" placeholder="Mneumonic Device" />
         <div id="image-inputs">
-          <input id="imageURL" type="text" name="imageURL" placeholder="Image URL" />
-          <span id="or">OR</span>
           <input id="image" type="file" name="image" />
         </div>
 
@@ -47,7 +45,6 @@ export class NewItem extends React.Component {
               question: $('#question').val(),
               answer: $('#answer').val(),
               mneumonic: $('#mneumonic').val(),
-              imageURL: $('#imageURL').val(),
               image: $('#image').get(0).files[0],
               uid: ''
             })
