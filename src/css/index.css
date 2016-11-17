@@ -321,7 +321,7 @@ input#image {
   margin: 20px 20px 20px 0px;
 }
 
-/* Card Styling */
+/* Card Styling and animations */
 
 .Card {
   cursor: pointer;
@@ -448,40 +448,4 @@ input#image {
     transform: rotateY(90deg);
     z-index: -1;
   }
-}
-
-.Cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.Cards .Card:nth-child(2n+2) .Card-Front {
-  background-color: #804815;
-  color: #FFD3AA;
-}
-
-.Cards .Card:nth-child(2n+2) .Card-Back {
-  background-color: #D49D6A;
-  color: #012E34;
-}
-
-.Cards .Card:nth-child(3n+3) .Card-Front {
-  background-color: #801D15;
-  color: #FFB0AA;
-}
-
-.Cards .Card:nth-child(3n+3) .Card-Back {
-  background-color: #FFB0AA;
-  color: #012E34;
-}
-
-.Cards .Card:nth-child(4n+4) .Card-Front {
-  background-color: #805E15;
-  color: #FFE4AA;
-}
-
-.Cards .Card:nth-child(4n+4) .Card-Back {
-  background-color: #FFE4AA;
-  color: #012E34;
 }
