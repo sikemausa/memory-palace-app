@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions/items';
 import Card from "./Card";
+import Slider from 'react-slick';
 
 export class ItemsList extends React.Component {
 
@@ -18,24 +19,30 @@ export class ItemsList extends React.Component {
 
   render() {
     const { items, deleteItem } = this.props;
-    console.log(items);
+    let settings ={
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+
+    let cards = (items.data).map((item, index) => {
+        return (
+          <div data-index={index} id="item-container">
+            <Card question={item.question}
+                  answer={item.answer}
+                  mnemonic={item.mneumonic}
+                  uid={item.uid}
+                  image={item.image} />
+          </div>
+        );
+      });
+
     return (
       <div id="items-div">
         <h2 id="items-title">My Cards</h2>
-        <ul id="individual-items">
-          { (items.data).map((item, index) => {
-              return (
-                <div id="item-container">
-                  <Card question={item.question}
-                        answer={item.answer}
-                        mnemonic={item.mneumonic}
-                        uid={item.uid}
-                        image={item.image} />
-                </div>
-              );
-            })
-          }
-        </ul>
+        {(cards.length > 0) && <Slider {...settings}>{cards}</Slider>}
       </div>);
   }
 };
