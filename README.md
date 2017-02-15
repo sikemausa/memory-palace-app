@@ -16,9 +16,20 @@ Users log in using Facebook (accomplished through using Firebase's authenticatio
 
 ## Images
 
+![screen shot 2017-02-14 at 5 32 14 pm](https://cloud.githubusercontent.com/assets/19242172/22955851/c1de440a-f2db-11e6-8dfc-9eaa4b313016.png)
 
 ## Build Setup
 
+### Install dependencies
+npm install
 
+### Start Dev Server
+npm start
+
+### Run Tests
+npm test
+
+### Build for Production
+npm run build
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
